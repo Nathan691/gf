@@ -17,6 +17,7 @@
             align-items: center;
             overflow: hidden;
             margin: 0;
+            position: relative;
         }
         .container {
             display: flex;
@@ -26,7 +27,7 @@
             max-width: 90%;
         }
         h1 {
-            font-size: 48px;
+            font-size: 56px;
             color: red;
             margin-bottom: 20px;
         }
@@ -37,13 +38,14 @@
             width: 100%;
         }
         .gif-container img {
-            width: 350px;
+            width: 400px;
         }
         .buttons {
             display: flex;
             justify-content: center;
             margin-top: 20px;
             width: 100%;
+            position: relative;
         }
         button {
             font-size: 20px;
@@ -61,13 +63,7 @@
         .no {
             background-color: #444;
             color: white;
-            position: relative;
-        }
-        #message {
-            display: none;
-            font-size: 24px;
-            color: darkred;
-            margin-top: 20px;
+            position: absolute;
         }
     </style>
 </head>
@@ -81,18 +77,17 @@
             <button class="yes" onclick="yesClicked()">Yes</button>
             <button class="no" onmouseover="moveButton()">No</button>
         </div>
-        <p id="message">YAY! I love you the most baby (yes I know this is 5 mins), I will see you on the 15th at 3.😊 ❤️</p>
     </div>
 
     <script>
         function yesClicked() {
-            document.getElementById('message').style.display = 'block';
+            window.location.href = "yes.html";
         }
 
         function moveButton() {
             let button = document.querySelector('.no');
-            let x = Math.random() * window.innerWidth * 0.7;
-            let y = Math.random() * window.innerHeight * 0.7;
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 100);
             button.style.left = `${x}px`;
             button.style.top = `${y}px`;
         }
