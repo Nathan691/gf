@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Be My Valentine?</title>
+    <title>Ang, Will you be my valentine?</title>
     <style>
         body {
             text-align: center;
@@ -12,6 +12,9 @@
         }
         .container {
             margin-top: 100px;
+        }
+        .gif-container {
+            margin-top: 20px;
         }
         .buttons {
             margin-top: 20px;
@@ -36,9 +39,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>Will you be my Valentine? 1</h1>
+        <h1>Ang, Will you be my valentine? ❤️</h1>
+        <div class="gif-container">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXgwbW9vc3JhZmR3aXpqenFpMjc4Mnlka2w3NWtmc3F0MTNxZHNsOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oxRmmpRWQTCQKu568/giphy.gif" alt="Cute GIF">
+        </div>
         <div class="buttons">
-            <button class="btn yes" onclick="alert('Yay! ❤️')">Yes</button>
+            <button class="btn yes" onclick="window.location.href='yes.html'">Yes</button>
             <button class="btn no" id="noButton" onmouseover="moveButton()">No</button>
         </div>
     </div>
