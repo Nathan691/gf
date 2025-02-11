@@ -88,16 +88,11 @@
 
         function moveButton() {
             let button = document.querySelector('.no');
-            let maxX = window.innerWidth - button.clientWidth - 50;
-            let maxY = window.innerHeight - button.clientHeight - 50;
-            let currentX = parseFloat(button.style.left) || maxX / 2;
-            let currentY = parseFloat(button.style.top) || maxY / 2;
-            let moveX = (Math.random() * 100) - 50;
-            let moveY = (Math.random() * 100) - 50;
-            let newX = Math.min(Math.max(currentX + moveX, 0), maxX);
-            let newY = Math.min(Math.max(currentY + moveY, 0), maxY);
-            button.style.left = `${newX}px`;
-            button.style.top = `${newY}px`;
+            let x = Math.random() * (window.innerWidth - button.clientWidth);
+            let y = Math.random() * (window.innerHeight - button.clientHeight);
+            button.style.position = 'absolute';
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
         }
     </script>
 </body>
