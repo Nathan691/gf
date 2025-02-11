@@ -65,12 +65,13 @@
         .no {
             background-color: #444;
             color: white;
+            position: absolute;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Will You Be My Valentine1? </h1>
+        <h1>Will You Be My Valentine2? </h1>
         <div class="gif-container">
             <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXgwbW9vc3JhZmR3aXpqenFpMjc4Mnlka2w3NWtmc3F0MTNxZHNsOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oxRmmpRWQTCQKu568/giphy.gif" alt="Cute Gif">
         </div>
@@ -87,11 +88,16 @@
 
         function moveButton() {
             let button = document.querySelector('.no');
-            let x = Math.random() * (window.innerWidth - button.clientWidth - 50);
-            let y = Math.random() * (window.innerHeight - button.clientHeight - 50);
-            button.style.position = "absolute";
-            button.style.left = `${x}px`;
-            button.style.top = `${y}px`;
+            let maxX = window.innerWidth - button.clientWidth - 50;
+            let maxY = window.innerHeight - button.clientHeight - 50;
+            let currentX = parseFloat(button.style.left) || maxX / 2;
+            let currentY = parseFloat(button.style.top) || maxY / 2;
+            let moveX = (Math.random() * 100) - 50;
+            let moveY = (Math.random() * 100) - 50;
+            let newX = Math.min(Math.max(currentX + moveX, 0), maxX);
+            let newY = Math.min(Math.max(currentY + moveY, 0), maxY);
+            button.style.left = `${newX}px`;
+            button.style.top = `${newY}px`;
         }
     </script>
 </body>
