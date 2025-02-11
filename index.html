@@ -3,67 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
+    <title>Be My Valentine?</title>
     <style>
         body {
             text-align: center;
             font-family: Arial, sans-serif;
-            background-color: pink;
-            background-image: url('https://www.transparenttextures.com/patterns/hearts.png');
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            margin: 0;
-            position: relative;
+            background-color: #ffcccb;
         }
         .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            max-width: 90%;
-        }
-        h1 {
-            font-size: 56px;
-            color: red;
-            margin-bottom: 20px;
-        }
-        .gif-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
-        .gif-container img {
-            width: 400px;
+            margin-top: 100px;
         }
         .buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             margin-top: 20px;
-            gap: 40px;
-            width: auto;
-            position: relative;
         }
-        button {
+        .btn {
             font-size: 20px;
-            padding: 15px 25px;
-            border-radius: 50px;
-            border: 2px solid red;
+            padding: 10px 20px;
+            border: none;
             cursor: pointer;
-            transition: 0.3s;
-            position: relative;
+            border-radius: 10px;
         }
         .yes {
-            background-color: #ff4d4d;
+            background-color: #ff69b4;
             color: white;
         }
         .no {
-            background-color: #444;
+            background-color: #f44336;
             color: white;
             position: absolute;
         }
@@ -71,28 +36,20 @@
 </head>
 <body>
     <div class="container">
-        <h1>Will You Be My Valentine? ❤️</h1>
-        <div class="gif-container">
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXgwbW9vc3JhZmR3aXpqenFpMjc4Mnlka2w3NWtmc3F0MTNxZHNsOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oxRmmpRWQTCQKu568/giphy.gif" alt="Cute Gif">
-        </div>
+        <h1>Will you be my Valentine? 1</h1>
         <div class="buttons">
-            <button class="yes" onclick="yesClicked()">Yes</button>
-            <button class="no" onmouseover="moveButton()">No</button>
+            <button class="btn yes" onclick="alert('Yay! ❤️')">Yes</button>
+            <button class="btn no" id="noButton" onmouseover="moveButton()">No</button>
         </div>
     </div>
-
+    
     <script>
-        function yesClicked() {
-            window.location.href = "yes.html";
-        }
-
         function moveButton() {
-            let button = document.querySelector('.no');
-            let x = Math.random() * (window.innerWidth - button.clientWidth);
-            let y = Math.random() * (window.innerHeight - button.clientHeight);
-            button.style.position = 'absolute';
-            button.style.left = `${x}px`;
-            button.style.top = `${y}px`;
+            let button = document.getElementById("noButton");
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = x + "px";
+            button.style.top = y + "px";
         }
     </script>
 </body>
