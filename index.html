@@ -19,21 +19,31 @@
             margin: 0;
         }
         .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             max-width: 90%;
         }
         h1 {
-            font-size: 36px;
+            font-size: 48px;
             color: red;
+            margin-bottom: 20px;
         }
         .gif-container {
-            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
         }
         .gif-container img {
-            width: 300px;
+            width: 350px;
         }
         .buttons {
+            display: flex;
+            justify-content: center;
             margin-top: 20px;
-            position: relative;
+            width: 100%;
         }
         button {
             font-size: 20px;
@@ -51,7 +61,7 @@
         .no {
             background-color: #444;
             color: white;
-            position: absolute;
+            position: relative;
         }
         #message {
             display: none;
@@ -71,7 +81,7 @@
             <button class="yes" onclick="yesClicked()">Yes</button>
             <button class="no" onmouseover="moveButton()">No</button>
         </div>
-        <p id="message">YAY! I will see you on February 15th at 3:00pm.😊❤️ I LOVE YOU. 😊 </p>
+        <p id="message">YAY! I love you the most baby (yes I know this is 5 mins), I will see you on the 15th at 3.😊 ❤️</p>
     </div>
 
     <script>
